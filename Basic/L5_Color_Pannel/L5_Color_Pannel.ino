@@ -9,13 +9,13 @@
  *
  * Connection:
  * 
- * RGB_LED_R connect to D7
- * RGB_LED_G connect to D8
- * RGB_LED_B connect to D9
+ * RGB_LED_R connect to D2
+ * RGB_LED_G connect to D3
+ * RGB_LED_B connect to D4
  *
- * Button1 connect to D2
- * Button2 connect to D3
- * Button3 connect to D4
+ * Button1 connect to D7
+ * Button2 connect to D8
+ * Button3 connect to D9
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -33,35 +33,34 @@
  * 1301  USA
  */
 
-const int ledR = 7;
-const int ledG = 8;
-const int ledB = 9;
-
-const int buttonR = 2;
-const int buttonG = 3;
-const int buttonB = 4;
-
-
+const int ledR = 2;
+const int ledB = 3;
+const int ledG = 4;
+ 
+const int buttonR = 5;
+const int buttonG = 6;
+const int buttonB = 7;
+ 
 void setup()
 {
     pinMode(ledR, OUTPUT);                          // set all led pin OUTPUT
     pinMode(ledG, OUTPUT);
     pinMode(ledB, OUTPUT);
-    
+ 
     pinMode(buttonR, INPUT);                        // set all button pin INPUT
     pinMode(buttonG, INPUT);
     pinMode(buttonB, INPUT);
 }
-
+ 
 void loop()
 {
     int stateR = 1-digitalRead(buttonR);            // get state of button
     int stateG = 1-digitalRead(buttonG);
     int stateB = 1-digitalRead(buttonB);
-    
+ 
     digitalWrite(ledR, stateR);                     // set led
     digitalWrite(ledG, stateG);
     digitalWrite(ledB, stateB);
-    
+ 
     delay(10);
 }
