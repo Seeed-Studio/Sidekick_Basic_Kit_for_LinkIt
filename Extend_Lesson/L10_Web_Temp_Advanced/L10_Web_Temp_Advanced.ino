@@ -53,7 +53,7 @@ void setup()
     LTask.begin();
     LWiFi.begin();
     Serial.begin(9600);
-    
+    while(!Serial.available());     // input anything to start the program
     for(int i=0; i<10; i++)
     {
         tp[i] = getTemperature();
