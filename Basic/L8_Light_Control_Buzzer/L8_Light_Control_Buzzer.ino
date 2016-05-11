@@ -31,7 +31,7 @@
 #define LIGHT_COMP       150
 
  
-const int pinLED   = 13;                        // pin define of LED
+const int pinLED   = 3;                        // pin define of LED
 const int pinLight = A0;                        // pin define of Light Sensor
 
 
